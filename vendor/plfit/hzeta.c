@@ -100,10 +100,10 @@ typedef struct gsl_sf_result_struct gsl_sf_result;
 
 #define HSL_SF_LNHZETA_EULERMACLAURIN_SERIES_SHIFT_MAX 256
 
-#define XSTR(x) STR(x)
-#define STR(x) #x
-
-#include XSTR(NAN)
+#ifdef _MSC_VER
+#undef NAN
+#define NAN (-(float)(((float)(1e+300 * 1e+300)) * 0.0F))
+#endif
 
 // B_{2j}/(2j)
 static
