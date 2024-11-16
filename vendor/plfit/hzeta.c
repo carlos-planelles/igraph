@@ -100,6 +100,11 @@ typedef struct gsl_sf_result_struct gsl_sf_result;
 
 #define HSL_SF_LNHZETA_EULERMACLAURIN_SERIES_SHIFT_MAX 256
 
+#define XSTR(x) STR(x)
+#define STR(x) #x
+
+#include XSTR(NAN)
+
 // B_{2j}/(2j)
 static
 double hsl_sf_hzeta_eulermaclaurin_series_coeffs[HSL_SF_HZETA_EULERMACLAURIN_SERIES_ORDER+2]={
