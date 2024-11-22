@@ -39,7 +39,7 @@ macro(find_dependencies)
     string(TOUPPER "${DEPENDENCY}" LIBNAME_UPPER)
 
     if(IGRAPH_USE_INTERNAL_${LIBNAME_UPPER} STREQUAL "AUTO")
-      find_package(${DEPENDENCY} ${${DEPENDENCY}_VERSION_MIN} QUIET)
+      find_package(${DEPENDENCY} ${${DEPENDENCY}_VERSION_MIN})
       if(${LIBNAME_UPPER}_FOUND)
         set(IGRAPH_USE_INTERNAL_${LIBNAME_UPPER} OFF)
       else()
